@@ -9,6 +9,8 @@ Introduction to containers
 
 -> Dockers containers are easy to ship from one place to other place that means it can ship from one place and deploy on kubernetes cluster .
 
+-> To contaneraize any application, we need to first write a Docker file . 
+
 -> Docker Life Cycle 
 -->Docker File ->(Execute the file and convert in to Docker Image) Docker Image ->(and convert this docker image to) Docker Container 
 
@@ -46,9 +48,10 @@ This is a Notes of Creating a Example Docker
 
 
 CONTAINERS (DEVOPS)
+ 
 
 
--> As a Devops Engineer to write a container will starts with 
+-> As a Devops Engineer, to contaneraize any application, we need to first write a Docker file . 
 
  1 - Choose a base Image like Ubuntu or CentOS 
 
