@@ -14,14 +14,12 @@ Introduction to containers
 
 -> Docker have the Docker Engine where files and images will be submitted to it . 
 
--> Dockers have disadvantage because it depends on Docker Engine and for suppose this Docker Engine gets down , We lost the containers and Images , so to get this right we have the concept like "Buildah" tool which will take the responsibility of Docker containers by writing commands in shell scripting and that will create a Docker Image. 
+-> Dockers have disadvantage because it depends on Docker Engine and for suppose this Docker Engine gets down , We lost the containers and Images , so to get this right we have the concept and tool called "Buildah"  which will takes the responsibility of Docker containers by writing commands in shell scripting and that will create a Docker Image. 
 
 -> Buildah tool will solve the Single Point Of Failure problem and Docker Layers problem and it works well with scopio and podman .  
 
 
-Doubt : not getting image in laptop but getting in CLI 
-
-Real time - 
+Real time Work - 
 
 1) CLI - EC2 AWS - Dev - Git - sourcecode - clone -  container code in Docker - for example - error - rereturn - Dev - Once back - Code - container code and scripts - Jenkins - Orch - Kubernetes Cluster 
 
@@ -29,11 +27,13 @@ Application - Java Application code - www.facebook.com - Java+DB -> Buildtools -
 
 Generation of .war, .rar files - Docker script
 
- In Real Time - we need approvals for Git, Jenkins and even to folders 
+- > In Real Time - we need approvals for Git, Jenkins and even to folders 
 
 
 Interview - CI/CD - CD - 2 types , Diff b/w Continuous Development and Continuous Delivery 
 
+-> Continuous Development - 
+-> Continuous Delivery  - 
 
 
 
