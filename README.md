@@ -1,5 +1,7 @@
 
-Introduction to containers
+Introduction to Containers
+
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 -> Container use the concept of Docker and Docker containers are very light weight because they have the minimal operating system(base operating sysyem) that means they have a base image and whenever they require dependencies , they will take them from the base operating system
 
