@@ -38,7 +38,7 @@ For example , for Django , We install Python packages and dependencies .
 
  6 - And the final command , we should know as a Devops Engineer about "ENTRPOINT" and "CMD"
 
- 7 - "ENTRYPOINT" and "CMD" execute your start command or whenever someone runs your Docker command, both "ENTRYPOINT" and "CMD" can serve as your starting point but the only difference is "ENTRY POINT" is something which you cannot change and whenever you are running the container, Let's say if I define "PYTHON3" - they can OVERRIDE" this value in your Docker Image and whereas "CMD" is something that is configuarable) 
+ 7 - "ENTRYPOINT" and "CMD" execute your start command or whenever someone runs your Docker command, both "ENTRYPOINT" and "CMD" can serve as your starting point but the only difference is "ENTRY POINT" is something which you cannot change and whenever you are running the container, Let's say if I define "PYTHON3" - they can "OVERRIDE" this value in your Docker Image and whereas "CMD" is something that is configuarable) 
 
 -> ENTRYPOINT ["python3"] - main executable on the ENTRYPOINT
 -> CMD["manage.py", "runserver", "0.0.0.0:8000"] - is modifiable according to the application requirements and the ports you alloted . 
