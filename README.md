@@ -336,6 +336,61 @@ Doubt : not getting the output of vloumes
 
 
 
+Day 28
+
+ DOCKER NETWORKING
+
+ -> Basically, Networking allows containers to communicate with each other and host system .
+
+ 
+ -> For Example, On a EC2 INSTANCE/HOST , A Docker is installed and we have two containers Front end C1 and Front end C2 and they have to communicate with each other using the concept of NETWORKING (IP address) 
+
+
+  COMPARING DOCKER NETWORKING WITH VM NETWORKING
+
+
+  -> Let's say each VM has its own Operating system and applications and each application is completely isolated from each other and they both have differnt IP'S and different subnetmasks.  
+ 
+
+ -> For example, we have two containers like C1 has just a Login Info and C2 has Payment Info which is a secured information and anybody who has access to Login Container shouldn't have access to payment container, Container Networking offers the solution .
+
+
+  HOW A CONTAINER TALKS TO HOST OPERATING SYSTEM 
+
+   1) C1 <-> C2 
+
+   2) C1 has isolation to C2 
+
+
+
+   -> If C1 has to talk to Host and Host has the bydefault ethernet with some IP , What Docketr Networking has done is there should be a medium and that medium is "virtual ethernet" and by default docker has it and this is known as Bridge Networking and this "Bridge is DOCKER 0 with virtual ethernet" . 
+
+ 
+   
+
+   We have lot of ways that containers can commincate with each other
+  
+
+   1) Bridge Networking 
+
+   2) Host Networking -> Secure 
+
+   3) Overlay Networking -> Kubernetes , Swarm 
+
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 
+   " Scenario 2 "
+
+    -> If C1(Payment) has to be isolated from C2(LogIn) , then the Docker uses the concept of "CUSTOM BRIDGE" and by that C2 can talk with the Host , it means to secure the C1(payment) Container, we should create a "CUSTOM BRIDGE" by using Docker Network command . 
+
+
+
+Doubt - unable to install ping and why we are using two different CLI's , and if have 100's of containers and logins.
+
+
+
+
 
 
 
