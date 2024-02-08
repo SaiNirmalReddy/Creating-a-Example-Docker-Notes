@@ -91,12 +91,13 @@ For example , for Django , We install Python packages and dependencies .
 -> ENTRYPOINT ["python3"] - main executable on the ENTRYPOINT
 -> CMD["manage.py", "runserver", "0.0.0.0:8000"] - is modifiable according to the application requirements and the ports you alloted . 
 
+------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 Day 26
 
-
-Multi Stage Docker Builds 
+ MULTI STAGE DOCKER BUILDS
 
 
 -> The concept has been come into picture beacause , day 2 day we are wasting lot of VM'S data so get this right we will start with Mutli stage Docker build, where in stages Docker containers are build and for example in 1st stage, we use the base OS from UBUNTU, but in final stage we just use only the environments which are required to run the application .
@@ -108,10 +109,12 @@ Multi Stage Docker Builds
 ->  If you are using applications like Golang , this is secured .
 
  
+------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 Day 27 
 
-Docker Bind Mounts & Volumes 
+DOCKER BIND AMOUNTS AND VOLUMES
 
 -> Let's say we have a CONTAINER and we have installed an "NGINX" application inside this CONTAINER , and what's this application does isk keeps the data of login user and time slots in the "LOGFILE" . (for example for last 5 days,10days) .  
 
