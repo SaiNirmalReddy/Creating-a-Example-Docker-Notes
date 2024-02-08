@@ -164,6 +164,41 @@ we are nor "/app" folder on the host should be assigned to specific folder on th
    -> docker --mount is more verbose , you elaborate the details like "src", "destination" , "permissions" in the container . 
 
 
+   -> Whenever you are trying to mount a VOLUME to the CONTAINER , you use         
+"docker -v <args> 
+
+   -> docker --mount is more verbose , you elaborate the details like "src", "destination" , "permissions" in the container . 
+
+   -> docker build -t <tagname> 
+
+   -> docker run -it -d(detach mode) <image> 
+
+   -> docker ps -a [list of running containers]
+
+   -> docker head -5
+    
+   -> docker ps -a | grep NAME
+
+   -> docker volume create name
+
+   -> docker volume rm <NAME>
+
+   -> 
+
+   -> docker inspect followed by <Name of the Container>
+
+   -> docker run -d --mount source=name of the volume, target= "/app" (target on the container like /app) and followd by <IMAGE> image details 
+
+   -> To stop any VOLUME , fisrt we need to stop CONTAINER 
+
+
+
+Doubt : not getting the image reduced in multi stage 
+
+Doubt : not getting the output of vloumes 
+
+
+
 
 
 
