@@ -179,7 +179,7 @@ we are nor "/app" folder on the host should be assigned to specific folder on th
  DOCKER COMMANDS
 
 
-   -> docker build -t <tagname> 
+   -> docker build -t tagname
 
    -> docker run -it -d(detach mode) <image> 
 
@@ -191,9 +191,9 @@ we are nor "/app" folder on the host should be assigned to specific folder on th
 
    -> docker volume create name
 
-   -> docker volume rm <NAME>
+   -> docker volume rm "NAME"
 
-   -> docker inspect followed by <Name of the Container>
+   -> docker inspect followed by "Name of the Container"
 
    -> docker run -d --mount source=name of the volume, target= "/app" (target on the container like /app) and followd by <IMAGE> image details 
 
