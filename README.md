@@ -193,8 +193,6 @@ we are nor "/app" folder on the host should be assigned to specific folder on th
 
    -> docker volume rm <NAME>
 
-   -> 
-
    -> docker inspect followed by <Name of the Container>
 
    -> docker run -d --mount source=name of the volume, target= "/app" (target on the container like /app) and followd by <IMAGE> image details 
