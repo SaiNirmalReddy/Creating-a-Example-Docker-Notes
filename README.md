@@ -303,6 +303,8 @@ This cheat sheet covers a wide range of Docker commands for container
 management, image manipulation, networking, and more. Customize commands 
 based on your specific use case and requirements.
 
+docker exec -it login /bin/bash
+
 
    -> docker build -t tagname
 
