@@ -172,6 +172,13 @@ we are nor "/app" folder on the host should be assigned to specific folder on th
 
    -> docker --mount is more verbose , you elaborate the details like "src", "destination" , "permissions" in the container . 
 
+
+   ------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ DOCKER COMMANDS
+
+
    -> docker build -t <tagname> 
 
    -> docker run -it -d(detach mode) <image> 
