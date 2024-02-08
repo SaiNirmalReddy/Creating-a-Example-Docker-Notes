@@ -181,13 +181,15 @@ we are nor "/app" folder on the host should be assigned to specific folder on th
 
    -> docker build -t tagname
 
-   -> docker run -it -d(detach mode) <image> 
+   -> docker run -it(interactive mode) -p(port) -d(detach mode) <image> 
 
    -> docker ps -a [list of running containers]
 
    -> docker head -5
-    
+   
    -> docker ps -a | grep NAME
+
+   -> docker images
 
    -> docker volume create name
 
