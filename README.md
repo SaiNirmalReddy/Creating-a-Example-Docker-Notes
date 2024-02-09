@@ -382,11 +382,146 @@ Day 28
  
    " Scenario 2 "
 
-    -> If C1(Payment) has to be isolated from C2(LogIn) , then the Docker uses the concept of "CUSTOM BRIDGE" and by that C2 can talk with the Host , it means to secure the C1(payment) Container, we should create a "CUSTOM BRIDGE" by using Docker Network command . 
+  If C1(Payment) has to be isolated from C2(LogIn) , then the Docker uses the concept of "CUSTOM BRIDGE" and by that C2 can talk with the Host , it means to secure the C1(payment) Container, we should create a "CUSTOM BRIDGE" by using Docker Network command .  
 
 
 
 Doubt - unable to install ping and why we are using two different CLI's , and if have 100's of containers and logins.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                                                               Day-29
+
+
+                                                                        DOCKER INTERVIEW QUESTIONS
+
+
+1) -> What is Docker ?
+
+Ans: Docker is basically a containerization platform which is used to build containers and to manage the lifecycle of the containers . 
+
+
+In Interviews , You should say as I use docker to basically build the docker images, docker files, run containers and push them to registeries .
+ 
+
+2) How Containers are different from Virtual Machines ? 
+
+ Ans: Containers are very light weight in nature because they don't have the complete operating system . Whereas in Containers, you install Docker platform and we are creating containers and whereas in VM'S , we install Hypervisor on top of it we have VM'S but in VM's we have the complete guest operating system so that image size will be very high and when yoy talk about CONTAINER , ypu basically have application and system dependencies and some system libraries and containers use other resources from host operating system . 
+
+Ex: Java -> JRE and dependencies ->  Containers 
+
+    Java -> Ubuntu Os, Kernel and system libraries - Virtual Machines
+
+
+3) What is Docker Life Cycle?
+
+Ans: Right from the stage of writing Docker file -> building a Docker Image -> to creating a Docker Container and pushing them to the registry .
+
+ ->Example :  Let' say a development team has approached and the requirement is to containeraize an application, we intially start with writing a "Docker file", I will write the Docker file with set of instructions and once I feel that the "Docketr file" is complete I will create a "Image" out of it by using the "DOCKER CLI" and run the commands loke Docker build to convert the file to image and docker run to execute the container and finally we push the "IMAGES" to external registeries like "DOCKER HUB" or ECR . 
+
+
+4) What are the components in Docker?
+
+ Ans:  When you Install the Docker , we get the components like Client in which we use commands like (docker build , docker pull, docker run) , Docker HOST where we have the "Docker deamon"(which is responsible for executing your actions) and the Containers and Images and next Docker Registry (where we have the external registeries like docker hub and nginx)  
+
+
+-> Example : Let's say , you are executing a command called docker build and submit it to Docker CLI and that request actions are received by "Docker deamon"(every action will be received bu docker deamon) which is heart of Docker and will try to take this and execute the actions and push them to docker registry and create a specifc Image . 
+
+
+5) What is the difference between docker COPY and docker ADD ? 
+
+ Ans: Docker ADD command can copy the files from a URL while Docker COPY command can copy files from host system into the container .
+
+ Example : Let's say you want a "logfile" from the AWS S3 STORAGE or any RAW file from Git hub , you can use Docker ADD command .
+
+Example : Let's say ypu want to copy a "source code" from your file system or EC2 Instance , you use Docker COPY command . 
+
+
+
+6) What is the difference between CMD and Entrypoint in Docker ?
+
+ Ans: CMD is basically let's say you want to pass from arguments to the container and this arguments can be overridden .
+
+Example : CMD - Let's say you want to run a "Python" related function for the calculator function , then the arguments should be passed and overridden acc to the requirement . 
+
+ "Host URL, Host ports should be written in CMD"
+ 
+
+ Entrypoint :  In "Entrypoint" , parameters shouldn't be overridden by default should be pass in Entrypoint . 
+
+    "python , manage.py" -> ENTRYPOINT
+
+
+7) What are the networking types in Docker and what is the default ?
+
+ Ans:  1) Bridge Network (default) - Bridge network is a medium which has a virtual ethernet (veth) or docker 0 network -> using which a container can access your host network . 
+
+       2) Overlay - When we have multiple Hosts and when we use docker swarms and kubernetes it will come into picture . 
+ 
+       3) Host - By using Host network, you will bind the host n/w with the container n/w and there is no virtual ethernet.
+
+       4) MacVlan - MacVlan will allows the container to appear on the network as a physical host rather than a container . 
+
+
+8)  Can you explain how to isolate networking between the containers ? 
+
+Ans: "To isolate the networking between the containers , we us the concept of "CUSTOM BRIDGE" network by which we secure the networking b/w the containers and the command we use is
+
+"docker -d --name --network=secure-network" by which this container is secured and cannot talk to other container . 
+
+
+9) what is a multi stage build in Docker ? 
+
+Ans:  The Multi stage docker build has come into picture to reduce the Image size as much as possible and while in the Dockerfile and we copy the application binaries and artifacts which don't have any ubuntu or run time dependencies from first stage to final stage and the major advantage of this is to build light weight containers . 
+
+-> In the first stage we install all dependencies and the once the application is bulid, all these dependencies are not required and what you do is in final stage we can simply the copy of binaries or the executables that we have created so that image size will be reduced as much as possible . 
+
+ Example : Let's say you have a multi-tier apllication like front-end(python dependecies), back end(java depencencies) and db(connectors) and the final image will be jar file or winrar file so we just copy the JRE's binaries and we execute them in final stage si the RAR file image will be completely reduced . 
+
+
+
+10) What are Distro less images in Docker ? 
+
+Ans: Distroless images contain only your application and its runtime dependencies with a very minimum operating system libraries. They do not contain package managers , shells or any other programs you would expect to find a standard Linux distribution. They are very small and lightweight images  .
+
+The advantage is your application is less exposed and highly secured .
+
+
+Example : scrath is a distroless image . 
+
+
+
+11) Real Time Challenges with Docker ?
+
+
+Ans: -> Docker is a single deamon process. Which can cause a single point of failure, If the Docker Deamon goes down for some reason all the applications are down . 
+-> To address this issue -  Tools like BUildah , Podman will address this solution beacuse Podman also have same docker instructions which address the docker issues and use same commands like docker . 
+
+-> Docker Deamon runs a root user. Which is security threat. Any process running as a root can have adverse effects. When it is compromised for security reasons, it can impact other applications or containers on the host . - To address this issue , Podman will address it because it don't have the root user . 
+
+-> Resource Constraints : If you're running too many containers on a single host, you may experience with resource constraints (for example if C1 used lost of memory or resources then C2 may don't have enough resources). This can result in slow performance or crashes . 
+
+ To address this issue , we have to configure the resoures very well for the containers .
+
+
+12)  What steps would you take to secure containers ?
+
+
+Ans: 
+
+VM'S have proper networking isolation becuase they have their own OS but whereas in Containers we don't have proper security becuase they don't have comple OS they just have the dependencies . So To resolve this issue 
+
+Some of the steps,
+
+     1) Use Distroless or Images with not too many packages as your final image in multi stage build, so that there os less chance of CVE or security issues.
+
+2) Ensure that the networking is configured properly. This is one of the most common reasons for security issues. If required configure custom bridge network and assign them to isolate containers .
+
+3) Use utilities like Sync to scan your container images . 
+
+whenever you create container images in Jenkins pipeline, always try to use utilities like SYNC" and ensure that your images don't have any vulnerabilities , so youcan use the docker sync command to scan the container images before you push them to  production (or) staging environment . 
+
 
 
 
