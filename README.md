@@ -391,10 +391,10 @@ Doubt - unable to install ping and why we are using two different CLI's , and if
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-                                                                               Day-29
+                                                                          Day-29
 
 
-                                                                        DOCKER INTERVIEW QUESTIONS
+                                                                 DOCKER INTERVIEW QUESTIONS
 
 
 1) -> What is Docker ?
@@ -411,7 +411,7 @@ In Interviews , You should say as I use docker to basically build the docker ima
 
 Ex: Java -> JRE and dependencies ->  Containers 
 
-    Java -> Ubuntu Os, Kernel and system libraries - Virtual Machines
+  Java -> Ubuntu Os, Kernel and system libraries - Virtual Machines
 
 
 3) What is Docker Life Cycle?
@@ -450,15 +450,15 @@ Example : CMD - Let's say you want to run a "Python" related function for the ca
 
  Entrypoint :  In "Entrypoint" , parameters shouldn't be overridden by default should be pass in Entrypoint . 
 
-    "python , manage.py" -> ENTRYPOINT
+   "python , manage.py" -> ENTRYPOINT
 
 
 7) What are the networking types in Docker and what is the default ?
 
  Ans:  1) Bridge Network (default) - Bridge network is a medium which has a virtual ethernet (veth) or docker 0 network -> using which a container can access your host network . 
 
-       2) Overlay - When we have multiple Hosts and when we use docker swarms and kubernetes it will come into picture . 
- 
+   2) Overlay - When we have multiple Hosts and when we use docker swarms and kubernetes it will come into picture . 
+       
        3) Host - By using Host network, you will bind the host n/w with the container n/w and there is no virtual ethernet.
 
        4) MacVlan - MacVlan will allows the container to appear on the network as a physical host rather than a container . 
@@ -514,7 +514,7 @@ VM'S have proper networking isolation becuase they have their own OS but whereas
 
 Some of the steps,
 
-     1) Use Distroless or Images with not too many packages as your final image in multi stage build, so that there os less chance of CVE or security issues.
+  1) Use Distroless or Images with not too many packages as your final image in multi stage build, so that there os less chance of CVE or security issues.
 
 2) Ensure that the networking is configured properly. This is one of the most common reasons for security issues. If required configure custom bridge network and assign them to isolate containers .
 
