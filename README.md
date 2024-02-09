@@ -2,7 +2,7 @@
 Introduction to Containers
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
-
+-
 -> Container use the concept of Docker and Docker containers are very light weight because they have the minimal operating system(base operating sysyem) that means they have a base image and whenever they require dependencies , they will take them from the base operating system
 
 -> Dockers are package of Application libraries and system dependencies and for example if one vm is running on linux and if other needs other o.s., docker will take the help of base operating system .
